@@ -1,0 +1,36 @@
+[submodule "Vim-Tomorrow-Theme"]
+	path = Vim-Tomorrow-Theme
+	url = git://github.com/shemerey/Vim-Tomorrow-Theme.git
+[submodule "vim-commentary"]
+	path = vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim-textobj-indent"]
+	path = vim-textobj-indent
+	url = git://github.com/kana/vim-textobj-indent.git
+[submodule "vim-textobj-rubyblock"]
+	path = vim-textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
+[submodule "vim-textobj-underscore"]
+	path = vim-textobj-underscore
+	url = git://github.com/lucapette/vim-textobj-underscore.git
+[submodule "vim-textobj-line"]
+	path = vim-textobj-line
+	url = git://github.com/kana/vim-textobj-line.git
+[submodule "vim-textobj-function"]
+	path = vim-textobj-function
+	url = git://github.com/kana/vim-textobj-function.git
+[submodule "vim-textobj-function-ruby"]
+	path = vim-textobj-function-ruby
+	url = git://github.com/t9md/vim-textobj-function-ruby.git
+[submodule "git://github.com/shemerey/split.git"]
+	path = splitjoin.vim
+	url = git://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "vim-textobj-user"]
+	path = vim-textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
+[submodule "powerline"]
+	path = powerline
+	url = git://github.com/Lokaltog/powerline.git
+[submodule "vim-angry"]
+	path = vim-angry
+	url = git://github.com/b4winckler/vim-angry.git
