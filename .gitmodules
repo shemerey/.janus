@@ -34,3 +34,6 @@
 [submodule "vim-angry"]
 	path = vim-angry
 	url = git://github.com/b4winckler/vim-angry.git
+[submodule "tabular"]
+	path = tabular
+	url = git://github.com/godlygeek/tabular.git
