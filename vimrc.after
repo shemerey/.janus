@@ -1,0 +1,97 @@
+let g:netrw_banner= 0
+syntax sync minlines=256
+set nocursorcolumn
+set nocursorline
+set scrolloff=5
+set numberwidth=5
+set colorcolumn=100
+set nobackup
+set nowritebackup
+set noerrorbells
+set novisualbell
+set noeb vb t_vb=
+
+" Encoding && Spell Checker -------------------------------------------------------------------
+set encoding=utf-8
+set fileencodings=utf-8,cp1251,koi8-r,latin1
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+function! ToggleSpell()
+  if !exists("b:spell")
+    setlocal spell spelllang=ru_ru,en_us
+    let b:spell = 1
+  else
+    setlocal nospell
+    unlet b:spell
+  endif
+endfunction
+
+nmap <F7> :call ToggleSpell()<CR>
+imap <F7> <Esc>:call ToggleSpell()<CR>a
+
+" spell checking shortcuts (next, prev, add, suggest)
+map <Leader>sn ]s
+map <Leader>sp [s
+map <Leader>sa zg
+map <Leader>ss z=
+
+" Convert ruby hashes to 1.9 style -----------------------------------------------------------
+map <F5> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
+
+" Clear highlighting
+nnoremap <leader><space> :noh<cr>
+
+" Center screen when scrolling search results
+nmap n nzz
+nmap N Nzz
+
+" Map ESC
+imap jj <ESC>
+
+" Tabularize
+if exists(":Tab")
+  nmap <leader>a\| :Tab /\|<CR>
+  vmap <leader>a\| :Tab /\|<CR>
+  nmap <leader>a= :Tab /=<CR>
+  vmap <leader>a= :Tab /=<CR>
+  nmap <leader>a: :Tab /:\zs<CR>
+  vmap <leader>a: :Tab /:\zs<CR>
+endif
+
+" CtrlP plugin section ------------------------------------------------------------------------
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$|\v[\/]public',
+  \ 'file': '\v\.(exe|so|dll|jpg|png|gif|jpeg|scssc|pdf)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      \ pathogen#split(&tags) +
+      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
+
+"-----------------------------------------------------------------------------------------------
+let g:buffergator_viewport_split_policy = "T"
+let g:buffergator_split_size = 20
+
+let g:Powerline_symbols = 'fancy'
+
+" Fast escape ----------------------------------------------------------------------------------
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode   " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+" Split Join -----------------------------------------------------------------------------------
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nmap <Leader>j :SplitjoinJoin<cr>
+nmap <Leader>s :SplitjoinSplit<cr>
