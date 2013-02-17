@@ -40,3 +40,6 @@
 [submodule "vim-powerline"]
 	path = vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "bufexplorer.zip"]
+	path = bufexplorer.zip
+	url = git://github.com/vim-scripts/bufexplorer.zip.git

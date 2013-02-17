@@ -62,7 +62,7 @@ endif
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache)$|\v[\/]public',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache|bundle)$|\v[\/]public|node_modules|\v[\/]public\/system|_(m|templates)|log|tmp|bin',
   \ 'file': '\v\.(exe|so|dll|jpg|png|gif|jpeg|scssc|pdf)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
