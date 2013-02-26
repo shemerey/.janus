@@ -3,7 +3,7 @@ syntax sync minlines=256
 set nocursorcolumn
 set nocursorline
 set scrolloff=5
-set numberwidth=5
+set numberwidth=4
 set colorcolumn=100
 set nobackup
 set nowritebackup
