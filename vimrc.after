@@ -16,19 +16,6 @@ set encoding=utf-8
 set fileencodings=utf-8,cp1251,koi8-r,latin1
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
 
-function! ToggleSpell()
-  if !exists("b:spell")
-    setlocal spell spelllang=ru_ru,en_us
-    let b:spell = 1
-  else
-    setlocal nospell
-    unlet b:spell
-  endif
-endfunction
-
-nmap <F7> :call ToggleSpell()<CR>
-imap <F7> <Esc>:call ToggleSpell()<CR>a
-
 " spell checking shortcuts (next, prev, add, suggest)
 map <Leader>sn ]s
 map <Leader>sp [s
@@ -68,14 +55,11 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 set tags=./tags,tags;
-autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
-      \ pathogen#split(&tags) +
-      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
+" autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+"       \ pathogen#split(&tags) +
+"       \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
 "-----------------------------------------------------------------------------------------------
-let g:buffergator_viewport_split_policy = "T"
-let g:buffergator_split_size = 20
-
 let g:Powerline_symbols = 'fancy'
 
 " Fast escape ----------------------------------------------------------------------------------
