@@ -76,6 +76,9 @@ endif
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode   " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
+"You can use Ag with ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 " Split Join -----------------------------------------------------------------------------------
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''

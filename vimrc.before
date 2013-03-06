@@ -1,6 +1,6 @@
 let mapleader = ","
 call janus#disable_plugin('nerdtree')
-call janus#disable_plugin('ack')
+"call janus#disable_plugin('ack')
 call janus#disable_plugin('css-color')
 call janus#disable_plugin('clojure')
 call janus#disable_plugin('cucumber')
