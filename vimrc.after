@@ -45,6 +45,13 @@ if exists(":Tab")
   vmap <leader>a: :Tab /:\zs<CR>
 endif
 
+" Fast Rails Navigation
+if exists(":Rails")
+  map <leader>gv :Rview <CR>
+  map <leader>gc :Rcontroller <CR>
+  map <leader>gm :Rmodel <CR>
+endif
+
 " CtrlP plugin section ------------------------------------------------------------------------
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_extensions = ['funky']
