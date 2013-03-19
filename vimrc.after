@@ -1,6 +1,7 @@
 let g:netrw_banner= 0
 let g:netrw_list_hide = '.*'
 syntax sync minlines=256
+set synmaxcol=128 " Syntax coloring lines that are too long just slows down the world
 set nocursorcolumn
 set nocursorline
 set scrolloff=5
@@ -10,6 +11,7 @@ set nobackup
 set nowritebackup
 set noerrorbells
 set novisualbell
+set shiftround 
 set noeb vb t_vb=
 
 set ttimeout
