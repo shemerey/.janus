@@ -52,3 +52,6 @@
 [submodule "go.vim"]
 	path = go.vim
 	url = git://github.com/fsouza/go.vim.git
+[submodule "vim-seek"]
+	path = vim-seek
+	url = git://github.com/goldfeld/vim-seek.git
